@@ -1,7 +1,7 @@
 ### Hi there 👋
 My name is Kamil Szpak and I am a student of the Silesian University of Technology. 
 
-I am software developer, and I specialize in C#/.NET, MYSQL, Linux.
+I am software developer, and I specialize in C#/ASP.NET, MYSQL, Linux.
 
 You can find me at LinkedIn, Steam, and Facebook.
 
