@@ -25,8 +25,8 @@ You can find me at LinkedIn, Steam, and Facebook.
 ![](https://img.shields.io/badge/OS-Windows-informational?style=flat&logo=Windows&logoColor=white&color=5bbcea)
 
 ![](https://img.shields.io/badge/VM-Proxmox-informational?style=flat&logo=Proxmox&logoColor=white&color=2bbc8a)
-![](https://img.shields.io/badge/VM-Amazon%20AWS-informational?style=flat&logo=Amazon%20AWS&logoColor=white&color=2bbc8a)
-![](https://img.shields.io/badge/VM-Amazon%20AWS-informational?style=flat&logo=Amazon%20AWS&logoColor=white&color=2bbc8a)
+![](https://img.shields.io/badge/Cloud-Amazon%20AWS-informational?style=flat&logo=Amazon%20AWS&logoColor=white&color=2bbc8a)
+![](https://img.shields.io/badge/Cloud-MS%20Azure-informational?style=flat&logo=Microsoft%20Azure&logoColor=white&color=2bbc8a)
 
 ![](https://img.shields.io/badge/Tools-RabbitMQ-informational?style=flat&logo=RabbitMQ&logoColor=white&color=11aa9d)
 ![](https://img.shields.io/badge/Tools-GIT-informational?style=flat&logo=Git&logoColor=white&color=11aa9d)
