@@ -58,7 +58,7 @@ text{{font-family:{FONT};fill:#e6edf3}}
 <circle cx="90" cy="90" r="88" fill="url(#halo)"><animate attributeName="r" values="80;96;80" dur="4s" repeatCount="indefinite"/><animate attributeName="opacity" values=".45;.9;.45" dur="4s" repeatCount="indefinite"/></circle>
 </g>
 <rect x=".75" y=".75" width="838.5" height="178.5" rx="19.5" fill="none" stroke="url(#edge)" stroke-width="1.5"/>
-<g><animateTransform attributeName="transform" type="translate" values="0 0;0 -4;0 0" dur="6s" repeatCount="indefinite"/><image href="{logo(key)}" x="32" y="32" width="116" height="116"/></g>
+<image href="{logo(key)}" x="32" y="32" width="116" height="116"/>
 <circle cx="185" cy="36" r="4" fill="{accent2}"><animate attributeName="opacity" values="1;.25;1" dur="1.6s" repeatCount="indefinite"/></circle>
 <text x="195" y="40.5" class="st">{status}</text>
 <text x="180" y="76" class="t">{name}</text>
