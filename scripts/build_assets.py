@@ -1,4 +1,5 @@
-import base64, pathlib, random
+import base64, io, pathlib, random
+from PIL import Image
 
 LOGOS = pathlib.Path(r"D:/Projekty/AI/inFlowsLogo/LOGOS")
 OUT = pathlib.Path(__file__).resolve().parent.parent / "assets"
@@ -9,7 +10,12 @@ RM = "@media (prefers-reduced-motion: reduce){*{animation:none!important}}"
 
 
 def logo(name, size=256):
-    return "data:image/png;base64," + base64.b64encode((LOGOS / f"{name}-{size}.png").read_bytes()).decode()
+    # Crop transparent padding (inFlows has ~6% per side) so all logos render at the same visual size.
+    im = Image.open(LOGOS / f"{name}-{size}.png").convert("RGBA")
+    im = im.crop(im.getchannel("A").point(lambda a: 255 if a > 8 else 0).getbbox())
+    buf = io.BytesIO()
+    im.save(buf, "PNG", optimize=True)
+    return "data:image/png;base64," + base64.b64encode(buf.getvalue()).decode()
 
 
 def chips(items, x, y, color):
