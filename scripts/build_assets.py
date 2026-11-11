@@ -29,8 +29,8 @@ def chips(items, x, y, color):
 
 
 def card(key, name, accent, accent2, lines, chip_items, status, visual, extra_css=""):
-    desc = "".join(f'<tspan x="200" dy="{0 if i == 0 else 22}">{l}</tspan>' for i, l in enumerate(lines))
-    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="840" height="230" viewBox="0 0 840 230" role="img" aria-label="{name}: {' '.join(lines)}">
+    desc = "".join(f'<tspan x="180" dy="{0 if i == 0 else 21}">{l}</tspan>' for i, l in enumerate(lines))
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="840" height="180" viewBox="0 0 840 180" role="img" aria-label="{name}: {' '.join(lines)}">
 <style>
 text{{font-family:{FONT};fill:#e6edf3}}
 .t{{font-size:34px;font-weight:700;letter-spacing:-.5px}}
@@ -50,21 +50,21 @@ text{{font-family:{FONT};fill:#e6edf3}}
 <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d1117"/><stop offset="1" stop-color="{accent}" stop-opacity=".9"/></linearGradient>
 <radialGradient id="halo"><stop offset="0" stop-color="{accent2}" stop-opacity=".7"/><stop offset="1" stop-color="{accent2}" stop-opacity="0"/></radialGradient>
 <linearGradient id="edge" x1="0" x2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".18"/><stop offset=".5" stop-color="{accent2}" stop-opacity=".6"/><stop offset="1" stop-color="#ffffff" stop-opacity=".08"/></linearGradient>
-<clipPath id="c"><rect width="840" height="230" rx="22"/></clipPath>
+<clipPath id="c"><rect width="840" height="180" rx="20"/></clipPath>
 </defs>
 <g clip-path="url(#c)">
-<rect width="840" height="230" fill="#0d1117"/>
-<rect width="840" height="230" fill="url(#bg)" opacity=".55"/>
-<circle class="glow" cx="105" cy="115" r="105" fill="url(#halo)"/>
+<rect width="840" height="180" fill="#0d1117"/>
+<rect width="840" height="180" fill="url(#bg)" opacity=".55"/>
+<circle cx="90" cy="90" r="88" fill="url(#halo)"><animate attributeName="r" values="80;96;80" dur="4s" repeatCount="indefinite"/><animate attributeName="opacity" values=".45;.9;.45" dur="4s" repeatCount="indefinite"/></circle>
 </g>
-<rect x=".75" y=".75" width="838.5" height="228.5" rx="21.5" fill="none" stroke="url(#edge)" stroke-width="1.5"/>
-<g class="logo"><image href="{logo(key)}" x="35" y="45" width="140" height="140"/></g>
-<circle class="dot" cx="206" cy="44" r="4" fill="{accent2}"/>
-<text x="216" y="48.5" class="st">{status}</text>
-<text x="200" y="88" class="t">{name}</text>
-<text x="200" y="118" class="d">{desc}</text>
-{chips(chip_items, 200, 178, accent2)}
-<g transform="translate(600 0)">{visual}</g>
+<rect x=".75" y=".75" width="838.5" height="178.5" rx="19.5" fill="none" stroke="url(#edge)" stroke-width="1.5"/>
+<g><animateTransform attributeName="transform" type="translate" values="0 0;0 -4;0 0" dur="6s" repeatCount="indefinite"/><image href="{logo(key)}" x="32" y="32" width="116" height="116"/></g>
+<circle cx="185" cy="36" r="4" fill="{accent2}"><animate attributeName="opacity" values="1;.25;1" dur="1.6s" repeatCount="indefinite"/></circle>
+<text x="195" y="40.5" class="st">{status}</text>
+<text x="180" y="76" class="t">{name}</text>
+<text x="180" y="103" class="d">{desc}</text>
+{chips(chip_items, 180, 138, accent2)}
+<g transform="translate(616 -6) scale(.86)">{visual}</g>
 </svg>'''
     (OUT / f"card-{key.lower()}.svg").write_text(svg, encoding="utf-8")
 
@@ -74,14 +74,17 @@ random.seed(7)
 bars = []
 for i in range(26):
     h = 18 + 70 * abs(__import__("math").sin(i * 0.55)) * (0.5 + random.random() / 2)
-    bars.append(f'<rect class="b" x="{12 + i * 8.4:.1f}" y="{100 - h / 2:.1f}" width="4.6" height="{h:.1f}" rx="2.3" fill="url(#wv)" style="animation-delay:-{random.random() * 1.2:.2f}s;animation-duration:{0.8 + random.random() * 0.7:.2f}s"/>')
+    d, t = 0.8 + random.random() * 0.7, random.random() * 1.2
+    lo = h * 0.25
+    bars.append(f'<rect x="{12 + i * 8.4:.1f}" width="4.6" rx="2.3" fill="url(#wv)" y="{100 - h / 2:.1f}" height="{h:.1f}">'
+                f'<animate attributeName="height" values="{lo:.1f};{h:.1f};{lo:.1f}" dur="{2 * d:.2f}s" begin="-{t:.2f}s" repeatCount="indefinite"/>'
+                f'<animate attributeName="y" values="{100 - lo / 2:.1f};{100 - h / 2:.1f};{100 - lo / 2:.1f}" dur="{2 * d:.2f}s" begin="-{t:.2f}s" repeatCount="indefinite"/></rect>')
 inspeak_vis = f'''<defs><linearGradient id="wv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7a6e6"/><stop offset="1" stop-color="#b13c9b"/></linearGradient></defs>
 {''.join(bars)}
 <text x="120" y="178" text-anchor="middle" style="font-family:{MONO};font-size:12px;fill:#f0c4e8">voice → text · on-device</text>'''
 card("inSpeak", "inSpeak", "#5c1a55", "#e46ccc",
      ["Local voice dictation for Windows. Hold a key, speak,", "text lands in any app. 100% offline: no cloud, no account."],
-     ["Parakeet TDT · ONNX", ".NET NativeAOT", "WinUI 3", "v1.5.5"], "FREE DOWNLOAD", inspeak_vis,
-     ".b{transform-box:fill-box;transform-origin:center;animation:wave 1s ease-in-out infinite alternate}@keyframes wave{from{transform:scaleY(.25)}to{transform:scaleY(1)}}")
+     ["Parakeet TDT · ONNX", ".NET NativeAOT", "WinUI 3", "v1.5.5"], "FREE DOWNLOAD", inspeak_vis)
 
 # --- inFlows: messages flowing between Azure nodes -------------------------
 paths = ["M40 100 C 100 40, 140 40, 160 52", "M40 100 C 100 100, 140 100, 160 100", "M40 100 C 100 160, 140 160, 160 148"]
