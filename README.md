@@ -1,28 +1,58 @@
-### Hi there 👋
+<p align="center">
+  <img src="assets/header.svg" width="100%" alt="Kamil Szpak builds local-first Windows apps, Azure integrations and a homelab that ships it all">
+</p>
 
-## Technology Skills
+<p align="center">
+  Integration engineer from Poland 🇵🇱 · Azure, .NET &amp; messaging by day, indie Windows apps by night.<br>
+  I like software that is <b>fast</b>, <b>local-first</b> and <b>respects your machine</b>: low RAM, no forced cloud, no accounts.
+</p>
 
-![](https://img.shields.io/badge/CODE-C%23%20/.NET-informational?style=flat&logo=.NET&logoColor=white&color=ff9933)
-![](https://img.shields.io/badge/CODE-Java-informational?style=flat&logo=Java&logoColor=white&color=ff9933)
-![](https://img.shields.io/badge/CODE-Python-informational?style=flat&logo=Python&logoColor=white&color=ff9933)
-![](https://img.shields.io/badge/CODE-HTML+CSS-informational?style=flat&logo=HTML5&logoColor=white&color=ff9933)
-![](https://img.shields.io/badge/CODE-JavaScript-informational?style=flat&logo=JavaScript&logoColor=white&color=ff9933)
-![](https://img.shields.io/badge/CODE-React.js-informational?style=flat&logo=REACT&logoColor=white&color=ff9933)
+<p align="center">
+  <a href="https://inspeak.pro"><img src="https://img.shields.io/badge/inspeak.pro-e46ccc?style=flat-square&logo=googlechrome&logoColor=white" alt="inspeak.pro"></a>
+  <a href="https://inflows.pro"><img src="https://img.shields.io/badge/inflows.pro-5fe0c0?style=flat-square&logo=googlechrome&logoColor=0d1117" alt="inflows.pro"></a>
+  <a href="https://usagewatch.seev.pro"><img src="https://img.shields.io/badge/usagewatch.seev.pro-9d8cff?style=flat-square&logo=googlechrome&logoColor=white" alt="usagewatch.seev.pro"></a>
+</p>
 
-![](https://img.shields.io/badge/DB-MYSQL-informational?style=flat&logo=mysql&logoColor=white&color=ff9933)
-![](https://img.shields.io/badge/DB-MS%20SQL-informational?style=flat&logo=Microsoft%20SQL%20Server&logoColor=white&color=ff9933)
+## 🛠️ What I'm shipping
 
-![](https://img.shields.io/badge/IDE-VisualStudio-informational?style=flat&logo=Visual%20Studio&logoColor=white&color=ff5050)
-![](https://img.shields.io/badge/Editor-VisualStudio%20Code-informational?style=flat&logo=Visual%20Studio%20Code&logoColor=white&color=ff5050)
+<a href="https://inspeak.pro"><img src="assets/card-inspeak.svg" width="100%" alt="inSpeak: local voice dictation for Windows"></a>
 
-![](https://img.shields.io/badge/OS-Linux-informational?style=flat&logo=Linux&logoColor=white&color=5bbcea)
-![](https://img.shields.io/badge/OS-Windows-informational?style=flat&logo=Windows&logoColor=white&color=5bbcea)
+<p align="center">
+  <a href="https://inspeak.pro"><b>Website</b></a> ·
+  <a href="https://github.com/Presoon/inSpeak-releases/releases/latest"><b>Download latest</b></a> ·
+  <a href="https://github.com/Presoon/inSpeak-releases"><b>Releases repo</b></a>
+</p>
 
-![](https://img.shields.io/badge/VM-Proxmox-informational?style=flat&logo=Proxmox&logoColor=white&color=2bbc8a)
-![](https://img.shields.io/badge/Cloud-Amazon%20AWS-informational?style=flat&logo=Amazon%20AWS&logoColor=white&color=2bbc8a)
-![](https://img.shields.io/badge/Cloud-MS%20Azure-informational?style=flat&logo=Microsoft%20Azure&logoColor=white&color=2bbc8a)
+<a href="https://inflows.pro"><img src="assets/card-inflows.svg" width="100%" alt="inFlows: desktop explorer for Azure Service Bus and Event Grid"></a>
 
-![](https://img.shields.io/badge/Tools-RabbitMQ-informational?style=flat&logo=RabbitMQ&logoColor=white&color=11aa9d)
-![](https://img.shields.io/badge/Tools-GIT-informational?style=flat&logo=Git&logoColor=white&color=11aa9d)
-![](https://img.shields.io/badge/Tools-JIRA-informational?style=flat&logo=Jira&logoColor=white&color=11aa9d)
-![](https://img.shields.io/badge/Tools-Trello-informational?style=flat&logo=Trello&logoColor=white&color=11aa9d)
+<p align="center">
+  <a href="https://inflows.pro"><b>Website</b></a> ·
+  Built for people who live in Service Bus dead-letter queues
+</p>
+
+<a href="https://github.com/Presoon/usagewatch"><img src="assets/card-usagewatch.svg" width="100%" alt="UsageWatch: tray app showing how much of your AI subscription quota is left"></a>
+
+<p align="center">
+  <a href="https://github.com/Presoon/usagewatch"><b>Source</b></a> ·
+  <a href="https://github.com/Presoon/usagewatch/releases/latest"><b>Download latest</b></a> ·
+  <a href="https://usagewatch.seev.pro"><b>Website</b></a> ·
+  PRs with new providers welcome ⭐
+</p>
+
+## 🧰 Toolbox
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=cs,dotnet,ts,react,rust,tauri,electron,nodejs,py&perline=9" alt="Languages and frameworks"><br>
+  <img src="https://skillicons.dev/icons?i=azure,docker,linux,postgres,githubactions,git,vscode,visualstudio,cloudflare&perline=9" alt="Cloud and tooling">
+</p>
+
+## 🧭 How I build
+
+- **Native and lean first.** inSpeak runs speech recognition fully on-device with NativeAOT and keeps its UI in a separate process, so the resident app stays light.
+- **Measure, don't guess.** Every release is checked end to end: installer hash, auto-update, real latency numbers.
+- **Self-hosted all the way.** The websites above run on my own homelab: Docker, Caddy and GitHub Actions runners with automatic rollback.
+- **AI agents as teammates.** I ship with Claude Code and Codex daily, which is exactly why I built UsageWatch.
+
+<p align="center">
+  <sub>Questions, ideas or bug reports? Open an issue in the project repo.</sub>
+</p>
